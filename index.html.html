@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surprise Love Letter!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0e68c; /* Light yellow, like paper/envelope */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+        .envelope {
+            width: 200px;
+            height: 150px;
+            background-color: #f5f5dc; /* Beige envelope color */
+            border: 3px solid #8b4513; /* Brown border */
+            position: relative;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            transition: transform 0.3s ease; /* Smooth hover effect */
+            margin-bottom: 20px;
+        }
+        .envelope:hover {
+            transform: scale(1.05); /* Slight zoom on hover */
+        }
+        .envelope::before {
+            content: "✉️"; /* Envelope emoji */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 48px;
+        }
+        .letter {
+            display: none; /* Hidden initially */
+            width: 300px;
+            padding: 20px;
+            background-color: white;
+            border: 2px solid #000;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            text-align: center;
+            animation: fadeIn 0.5s ease-in; /* Fade-in animation */
+            font-size: 18px;
+            font-family: "Courier New", monospace; /* Typewriter font for letter feel */
+            line-height: 1.4;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        h1 {
+            color: #8b4513;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="envelope" onclick="openLetter()">
+        <!-- Click the envelope to open! -->
+    </div>
+    <div id="letter" class="letter">
+        <h1>Uy, tangina marunong na ako mag code!</h1>
+        <p>Hellow na Althea Bajar, miss na kita pakshittty</p>
+    </div>
+
+    <script>
+        function openLetter() {
+            const envelope = document.querySelector(".envelope");
+            const letter = document.getElementById("letter");
+            
+            // Hide envelope and show letter
+            envelope.style.display = "none";
+            letter.style.display = "block";
+            
+            // Optional: Add a fun sound or more animation if you want (but keeping it simple)
+        }
+    </script>
+</body>
+</html>
+
